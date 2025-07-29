@@ -1,7 +1,43 @@
 {
-  "lastUpdated": "2025-07-29T10:30:11.218Z",
+  "lastUpdated": "2025-07-29T15:58:07.311Z",
   "data": {
     "features": [
+      {
+        "id": "smi:org.gfz-potsdam.de/geofon/noa2025oszvt",
+        "properties": {
+          "time": "2025-07-29T13:55:29.39283Z",
+          "magnitude": "2.167642517",
+          "place": "Greece",
+          "agency": "NOAIG",
+          "status": "confirmed",
+          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250729142658.19493.81480"
+        },
+        "geometry": {
+          "coordinates": [
+            22.19467163,
+            38.29238892,
+            10286.15316
+          ]
+        }
+      },
+      {
+        "id": "smi:org.gfz-potsdam.de/geofon/noa2025osxze",
+        "properties": {
+          "time": "2025-07-29T12:59:30.093221Z",
+          "magnitude": "1.959465375",
+          "place": "Dodecanese Islands, Greece",
+          "agency": "NOAIG",
+          "status": "confirmed",
+          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250729130411.342079.79245"
+        },
+        "geometry": {
+          "coordinates": [
+            25.64987183,
+            36.6343689,
+            9173.7264
+          ]
+        }
+      },
       {
         "id": "smi:org.gfz-potsdam.de/geofon/noa2025osqod",
         "properties": {
@@ -2267,204 +2303,6 @@
             21.64260864,
             38.31985474,
             39465.96273
-          ]
-        }
-      },
-      {
-        "id": "smi:org.gfz-potsdam.de/geofon/noa2025onqwq",
-        "properties": {
-          "time": "2025-07-26T15:43:45.32724Z",
-          "magnitude": "1.308585775",
-          "place": "Greece",
-          "agency": "NOAIG",
-          "status": "confirmed",
-          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250726182635.637416.220652"
-        },
-        "geometry": {
-          "coordinates": [
-            21.65679932,
-            38.29742432,
-            33290.56803
-          ]
-        }
-      },
-      {
-        "id": "smi:org.gfz-potsdam.de/geofon/noa2025onofo",
-        "properties": {
-          "time": "2025-07-26T14:23:15.080733Z",
-          "magnitude": "1.594790447",
-          "place": "Greece-Albania Border Region",
-          "agency": "NOAIG",
-          "status": "confirmed",
-          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250726143214.630863.212613"
-        },
-        "geometry": {
-          "coordinates": [
-            20.69915771,
-            39.4619751,
-            7162.801107
-          ]
-        }
-      },
-      {
-        "id": "smi:org.gfz-potsdam.de/geofon/noa2025onnvt",
-        "properties": {
-          "time": "2025-07-26T14:11:46.142342Z",
-          "magnitude": "1.333831779",
-          "place": "Greece",
-          "agency": "NOAIG",
-          "status": "confirmed",
-          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250726142350.851741.212200"
-        },
-        "geometry": {
-          "coordinates": [
-            22.64419556,
-            38.13766479,
-            13651.95719
-          ]
-        }
-      },
-      {
-        "id": "smi:org.gfz-potsdam.de/geofon/noa2025onndu",
-        "properties": {
-          "time": "2025-07-26T13:50:52.610539Z",
-          "magnitude": "3.455082543",
-          "place": "Crete, Greece",
-          "agency": "NOAIG",
-          "status": "confirmed",
-          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250726141414.960748.84807"
-        },
-        "geometry": {
-          "coordinates": [
-            26.44500732,
-            35.03631592,
-            28840.861
-          ]
-        }
-      },
-      {
-        "id": "smi:org.gfz-potsdam.de/geofon/noa2025onnag",
-        "properties": {
-          "time": "2025-07-26T13:46:45.452013Z",
-          "magnitude": "1.776959596",
-          "place": "Greece-Albania Border Region",
-          "agency": "NOAIG",
-          "status": "confirmed",
-          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250726140449.899646.210730"
-        },
-        "geometry": {
-          "coordinates": [
-            20.79483032,
-            39.38735962,
-            17474.14144
-          ]
-        }
-      },
-      {
-        "id": "smi:org.gfz-potsdam.de/geofon/noa2025onmxd",
-        "properties": {
-          "time": "2025-07-26T13:43:08.671254Z",
-          "magnitude": "2.129115295",
-          "place": "Greece",
-          "agency": "NOAIG",
-          "status": "confirmed",
-          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250726141446.504663.211593"
-        },
-        "geometry": {
-          "coordinates": [
-            21.41464233,
-            38.31161499,
-            8859.965007
-          ]
-        }
-      },
-      {
-        "id": "smi:org.gfz-potsdam.de/geofon/noa2025onlyj",
-        "properties": {
-          "time": "2025-07-26T13:14:14.791908Z",
-          "magnitude": "1.263750987",
-          "place": "Greece",
-          "agency": "NOAIG",
-          "status": "confirmed",
-          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250726134009.216359.208555"
-        },
-        "geometry": {
-          "coordinates": [
-            22.05596924,
-            38.3102417,
-            10186.31999
-          ]
-        }
-      },
-      {
-        "id": "smi:org.gfz-potsdam.de/geofon/noa2025onlpz",
-        "properties": {
-          "time": "2025-07-26T13:04:33.624593Z",
-          "magnitude": "1.362832291",
-          "place": "Greece",
-          "agency": "NOAIG",
-          "status": "confirmed",
-          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250726133319.251027.208253"
-        },
-        "geometry": {
-          "coordinates": [
-            21.66046143,
-            40.09918213,
-            22337.44303
-          ]
-        }
-      },
-      {
-        "id": "smi:org.gfz-potsdam.de/geofon/noa2025onjuw",
-        "properties": {
-          "time": "2025-07-26T12:09:33.262196Z",
-          "magnitude": "2.377502911",
-          "place": "Southern Greece",
-          "agency": "NOAIG",
-          "status": "confirmed",
-          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250726123235.595539.79512"
-        },
-        "geometry": {
-          "coordinates": [
-            23.43887329,
-            36.54830933,
-            27742.69613
-          ]
-        }
-      },
-      {
-        "id": "smi:org.gfz-potsdam.de/geofon/noa2025onjos",
-        "properties": {
-          "time": "2025-07-26T12:03:07.691649Z",
-          "magnitude": "2.736110319",
-          "place": "Ionian Sea",
-          "agency": "NOAIG",
-          "status": "confirmed",
-          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250726122416.742615.206792"
-        },
-        "geometry": {
-          "coordinates": [
-            19.71221924,
-            37.6272583,
-            5736.612956
-          ]
-        }
-      },
-      {
-        "id": "smi:org.gfz-potsdam.de/geofon/noa2025onhie",
-        "properties": {
-          "time": "2025-07-26T10:54:08.405592Z",
-          "magnitude": "1.532448446",
-          "place": "Greece-Albania Border Region",
-          "agency": "NOAIG",
-          "status": "confirmed",
-          "url": "smi:org.gfz-potsdam.de/geofon/NLL.20250726110900.875502.89594"
-        },
-        "geometry": {
-          "coordinates": [
-            20.97839355,
-            39.57824707,
-            13922.93294
           ]
         }
       }
