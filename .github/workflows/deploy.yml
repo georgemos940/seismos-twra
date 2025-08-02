@@ -13,10 +13,15 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Setup SSH and Rsync Code to VPS
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+          rsync -avz --delete ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_PATH }}/
 
       - name: Create .env.local on VPS
         run: |
@@ -28,14 +33,12 @@ jobs:
             SMTP_USER=${{ secrets.SMTP_USER }}
             SMTP_PASS=${{ secrets.SMTP_PASS }}
             EOT
-                      EOF
+          EOF
 
-      - name: Deploy to VPS
+      - name: Restart containers on VPS
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << EOF
             cd ${{ secrets.VPS_PATH }}
-            git pull https://github.com/georgemos940/seismos-twra.git master
             docker-compose down
             docker-compose up -d --build
           EOF
-
