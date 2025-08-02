@@ -12,19 +12,26 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-
-      - name: Setup SSH and Rsync Code to VPS
+      - name: Rsync code to VPS
         env:
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_seismos_twra
-          chmod 600 ~/.ssh/id_seismos_twra
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
-          rsync -avz --delete -e "ssh -i ~/.ssh/id_seismos_twra" ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_PATH }}/
 
-      - name: Create .env.local on VPS
+          rsync -avz -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_PATH }}/
+
+      - name: Create .env.local
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+
           ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << EOF
             cat <<EOT > ${{ secrets.VPS_PATH }}/.env.local
             NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${{ secrets.NEXT_PUBLIC_RECAPTCHA_SITE_KEY }}
@@ -35,10 +42,3 @@ jobs:
             EOT
           EOF
 
-      - name: Restart containers on VPS
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << EOF
-            cd ${{ secrets.VPS_PATH }}
-            docker-compose down
-            docker-compose up -d --build
-          EOF
